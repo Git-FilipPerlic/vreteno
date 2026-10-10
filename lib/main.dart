@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const VretenoApp());
+import 'data/repositories/article_repository.dart';
+import 'features/feed/ui/feed_screen.dart';
+
+void main() => runApp(VretenoApp(repo: ArticleRepository()));
 
 class VretenoApp extends StatelessWidget {
-  const VretenoApp({super.key});
+  const VretenoApp({super.key, required this.repo});
+
+  final ArticleRepository repo;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +16,7 @@ class VretenoApp extends StatelessWidget {
       title: 'Vreteno',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorSchemeSeed: Colors.indigo, useMaterial3: true),
-      home: const Scaffold(body: Center(child: Text('Vreteno'))),
+      home: FeedScreen(repo: repo),
     );
   }
 }

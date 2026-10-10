@@ -3,7 +3,8 @@ import 'package:vreteno/data/models/article.dart';
 import 'package:vreteno/services/clustering.dart';
 import 'package:vreteno/services/text_normalizer.dart';
 
-Article a(String src, String title, {String summary = '', int h = 0}) => Article(
+Article a(String src, String title, {String summary = '', int h = 0}) =>
+    Article(
       sourceId: src,
       title: title,
       url: 'https://x.rs/$src/${title.hashCode}',

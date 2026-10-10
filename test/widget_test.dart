@@ -7,9 +7,12 @@ import 'package:http/testing.dart';
 
 void main() {
   testWidgets('feed shows articles', (tester) async {
-    final mock = MockClient((_) async => http.Response(
+    final mock = MockClient(
+      (_) async => http.Response(
         '<rss><channel><item><title>Probna vest</title><link>https://x.rs/1</link></item></channel></rss>',
-        200));
+        200,
+      ),
+    );
     final repo = ArticleRepository(client: FeedClient(client: mock));
     await tester.pumpWidget(VretenoApp(repo: repo));
     await tester.pumpAndSettle();

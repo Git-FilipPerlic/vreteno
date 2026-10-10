@@ -13,12 +13,6 @@ class FeedScreen extends StatefulWidget {
 
 class _FeedScreenState extends State<FeedScreen> {
   @override
-  void initState() {
-    super.initState();
-    widget.repo.refresh();
-  }
-
-  @override
   Widget build(BuildContext context) {
     final repo = widget.repo;
     return Scaffold(
@@ -43,7 +37,9 @@ class _FeedScreenState extends State<FeedScreen> {
                     overflow: TextOverflow.ellipsis,
                   ),
                   subtitle: Text(
-                    story.sourceIds.map((id) => repo.sourceOf(id).name).join(', '),
+                    story.sourceIds
+                        .map((id) => repo.sourceOf(id).name)
+                        .join(', '),
                   ),
                   trailing: Text('${story.sourceIds.length}'),
                 );

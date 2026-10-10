@@ -43,6 +43,17 @@ CREATE TABLE IF NOT EXISTS articles (
 
 CREATE INDEX IF NOT EXISTS idx_articles_source    ON articles(source_id);
 CREATE INDEX IF NOT EXISTS idx_articles_published ON articles(published_at);
+
+-- Written by cluster.py: groups of articles about the same event.
+CREATE TABLE IF NOT EXISTS stories (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    title         TEXT NOT NULL,       -- title of the earliest article
+    first_at      TEXT NOT NULL,
+    last_at       TEXT NOT NULL,
+    article_count INTEGER NOT NULL,
+    source_count  INTEGER NOT NULL,
+    country_count INTEGER NOT NULL
+);
 """
 
 # Feeds that look wrong: kept and flagged, never dropped.
@@ -58,7 +69,17 @@ def connect(path: Path | str = DEFAULT_DB) -> sqlite3.Connection:
     conn.execute("PRAGMA journal_mode=WAL")
     conn.execute("PRAGMA foreign_keys=ON")
     conn.executescript(SCHEMA)
+    _migrate(conn)
     return conn
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    """Add columns introduced after the first version (keeps existing data)."""
+    cols = {r["name"] for r in conn.execute("PRAGMA table_info(articles)")}
+    if "story_id" not in cols:
+        conn.execute("ALTER TABLE articles ADD COLUMN story_id INTEGER REFERENCES stories(id)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_articles_story ON articles(story_id)")
+    conn.commit()
 
 
 def load_sources(conn: sqlite3.Connection, json_path: Path | str = DEFAULT_SOURCES) -> int:

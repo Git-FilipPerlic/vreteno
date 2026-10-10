@@ -41,3 +41,13 @@ Optional: `--db other.db` and `--sources other.json`.
 - Conditional GET (ETag / Last-Modified) is used; a source is set `active = 0` after
   10 consecutive failures (`sources.fail_count`, an extra column).
 - Articles without a date, or dated in the future, get `published_at = fetched_at`.
+
+## Clustering
+
+```powershell
+python cluster.py --days 3 --show 15   # group the last 3 days into stories, print the 15 biggest
+```
+
+Fills the `stories` table and `articles.story_id`. TF-IDF over normalized title and summary,
+cosine similarity against story centroids, 48 h time gap. Stories for the chosen window are
+rebuilt on every run, so story ids change between runs.

@@ -26,19 +26,26 @@ class _FeedScreenState extends State<FeedScreen> {
       body: ListenableBuilder(
         listenable: repo,
         builder: (context, _) {
-          if (repo.loading && repo.articles.isEmpty) {
+          if (repo.loading && repo.stories.isEmpty) {
             return const Center(child: CircularProgressIndicator());
           }
           return RefreshIndicator(
             onRefresh: repo.refresh,
             child: ListView.separated(
-              itemCount: repo.articles.length,
+              itemCount: repo.stories.length,
               separatorBuilder: (_, _) => const Divider(height: 1),
               itemBuilder: (context, i) {
-                final a = repo.articles[i];
+                final story = repo.stories[i];
                 return ListTile(
-                  title: Text(a.title, maxLines: 3, overflow: TextOverflow.ellipsis),
-                  subtitle: Text(repo.sourceOf(a.sourceId).name),
+                  title: Text(
+                    story.title,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  subtitle: Text(
+                    story.sourceIds.map((id) => repo.sourceOf(id).name).join(', '),
+                  ),
+                  trailing: Text('${story.sourceIds.length}'),
                 );
               },
             ),

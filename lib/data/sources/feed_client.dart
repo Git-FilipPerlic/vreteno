@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 import '../models/article.dart';
@@ -14,9 +16,15 @@ class FeedClient {
         .get(Uri.parse(source.feedUrl))
         .timeout(const Duration(seconds: 15));
     if (res.statusCode != 200) {
-      throw http.ClientException('HTTP ${res.statusCode}', Uri.parse(source.feedUrl));
+      throw http.ClientException(
+        'HTTP ${res.statusCode}',
+        Uri.parse(source.feedUrl),
+      );
     }
-    return parseFeed(res.body, sourceId: source.id);
+    return parseFeed(
+      utf8.decode(res.bodyBytes, allowMalformed: true),
+      sourceId: source.id,
+    );
   }
 
   /// Povlači sve izvore paralelno; izvor koji pukne se preskače.

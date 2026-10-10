@@ -53,3 +53,4 @@ collector/__pycache__/
 
 # distributable apk
 dist/
+collector/server.log

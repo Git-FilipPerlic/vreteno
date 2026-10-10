@@ -72,8 +72,18 @@ List<BlindSpot> findBlindSpots(
         : times.reduce((a, b) => a.isBefore(b) ? a : b);
 
     final covered = sources.where((s) => ids.contains(s.id)).toList();
+    // Samo izvori iz zemalja u kojima je priča objavljena mogu da je "propuste".
+    final countries = {
+      for (final s in covered)
+        if (s.country.isNotEmpty) s.country,
+    };
     final missing = sources.where((s) {
       if (ids.contains(s.id) || !active.contains(s.id)) return false;
+      if (countries.isNotEmpty &&
+          s.country.isNotEmpty &&
+          !countries.contains(s.country)) {
+        return false;
+      }
       final from = oldest[s.id]!;
       return storyStart == null || !storyStart.isBefore(from);
     }).toList();

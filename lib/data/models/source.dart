@@ -17,9 +17,13 @@ class Source {
     this.leaning = Leaning.unknown,
     this.rationale = '',
     this.evidence = '',
+    this.country = '',
   });
 
   final String id;
+
+  /// RS, BA, HR, ME; prazno kad se ne zna.
+  final String country;
   final String name;
   final String feedUrl;
   final Leaning leaning;

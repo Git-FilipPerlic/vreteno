@@ -48,6 +48,33 @@ class _FeedScreenState extends State<FeedScreen> {
             Text('Vreteno'),
           ],
         ),
+        actions: [
+          ListenableBuilder(
+            listenable: repo,
+            builder: (context, _) => Padding(
+              padding: const EdgeInsets.only(right: 12),
+              child: Tooltip(
+                message: switch (repo.mode) {
+                  DataMode.server => 'Podaci sa Vreteno servera',
+                  DataMode.direct =>
+                    'Server nedostupan: čitam RSS direktno (manje izvora)',
+                  DataMode.none => 'Učitavanje',
+                },
+                triggerMode: TooltipTriggerMode.tap,
+                child: Icon(
+                  switch (repo.mode) {
+                    DataMode.server => Icons.cloud_done_outlined,
+                    DataMode.direct => Icons.cloud_off_outlined,
+                    DataMode.none => Icons.cloud_sync_outlined,
+                  },
+                  color: repo.mode == DataMode.direct
+                      ? AppColors.inkSoft
+                      : AppColors.crimson,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       body: ListenableBuilder(
         listenable: repo,

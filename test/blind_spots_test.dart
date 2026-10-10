@@ -111,4 +111,23 @@ void main() {
     ]);
     expect(findBlindSpots([sport], sources, base, minPerDay: 0), isEmpty);
   });
+
+  test('only sources from the story countries can miss it', () {
+    final src = [
+      Source(id: 'rs1', name: 'RS1', feedUrl: '', country: 'RS'),
+      Source(id: 'rs2', name: 'RS2', feedUrl: '', country: 'RS'),
+      Source(id: 'rs3', name: 'RS3', feedUrl: '', country: 'RS'),
+      Source(id: 'hr1', name: 'HR1', feedUrl: '', country: 'HR'),
+    ];
+    final feed = [for (final x in src) a(x.id, 0)];
+    final story = Story([a('rs1', 5), a('rs2', 6)]);
+    final spots = findBlindSpots(
+      [story],
+      src,
+      feed,
+      minCovered: 2,
+      minPerDay: 0,
+    );
+    expect(spots.single.missing.map((e) => e.id), ['rs3']); // HR1 excluded
+  });
 }

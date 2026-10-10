@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vreteno/data/repositories/article_repository.dart';
+import 'package:vreteno/data/sources/api_client.dart';
 import 'package:vreteno/data/sources/feed_client.dart';
 import 'package:vreteno/main.dart';
 import 'package:http/http.dart' as http;
@@ -14,7 +15,13 @@ void main() {
         200,
       ),
     );
-    final repo = ArticleRepository(client: FeedClient(client: mock));
+    final repo = ArticleRepository(
+      client: FeedClient(client: mock),
+      api: ApiClient(
+        client: MockClient((_) async => http.Response('down', 503)),
+        baseUrl: 'http://x',
+      ),
+    );
     await tester.pumpWidget(VretenoApp(repo: repo));
     await tester.pumpAndSettle();
     expect(find.text('Probna vest'), findsWidgets);
@@ -27,7 +34,13 @@ void main() {
         200,
       ),
     );
-    final repo = ArticleRepository(client: FeedClient(client: mock));
+    final repo = ArticleRepository(
+      client: FeedClient(client: mock),
+      api: ApiClient(
+        client: MockClient((_) async => http.Response('down', 503)),
+        baseUrl: 'http://x',
+      ),
+    );
     await tester.pumpWidget(VretenoApp(repo: repo));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Probna vest').first);

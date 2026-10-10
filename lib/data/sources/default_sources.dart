@@ -1,74 +1,75 @@
 import '../models/source.dart';
+import 'ratings.dart';
 
-// Orijentacije počivaju na javnim izvorima, ne na našem sudu:
-//  - Reuters Institute Digital News Report 2025, Srbija
-//  - Media Ownership Monitor Serbia (BIRN / RSF), serbia.mom-gmr.org
-// Za izvor koji ti izvori ne opisuju stoji `unknown`.
-const _reuters =
-    'https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2025/serbia';
-const _mom =
-    'https://serbia.mom-gmr.org/en/findings/local-media-concentrations-below-the-radar/';
-
-const defaultSources = <Source>[
+/// Izvori za direktno čitanje RSS-a (rezerva kad server nije dostupan).
+/// Orijentacije dolaze iz ratings.dart; `unknown` gde javni izvori ćute.
+final defaultSources = <Source>[
   Source(
     id: 'n1',
-    name: 'N1',
+    name: rN1.name,
     feedUrl: 'https://n1info.rs/feed/',
-    leaning: Leaning.critical,
-    rationale: 'Opisan kao "highly critical of the government".',
-    evidence: _reuters,
+    leaning: rN1.leaning,
+    rationale: rN1.rationale,
+    evidence: rN1.evidence,
+    country: 'RS',
   ),
   Source(
     id: 'danas',
-    name: 'Danas',
+    name: rDanas.name,
     feedUrl: 'https://www.danas.rs/feed/',
-    leaning: Leaning.critical,
-    rationale: 'United Group; "critical approach towards the government".',
-    evidence: _mom,
+    leaning: rDanas.leaning,
+    rationale: rDanas.rationale,
+    evidence: rDanas.evidence,
+    country: 'RS',
   ),
   Source(
     id: 'nova',
-    name: 'Nova',
+    name: rNova.name,
     feedUrl: 'https://nova.rs/feed/',
-    leaning: Leaning.critical,
-    rationale: 'United Group; "critical approach towards the government".',
-    evidence: _mom,
+    leaning: rNova.leaning,
+    rationale: rNova.rationale,
+    evidence: rNova.evidence,
+    country: 'RS',
   ),
   Source(
     id: 'vreme',
-    name: 'Vreme',
+    name: rVreme.name,
     feedUrl: 'https://www.vreme.com/feed/',
-    leaning: Leaning.critical,
-    rationale: 'Navedeno među nezavisnim, pouzdanim medijima.',
-    evidence: _reuters,
+    leaning: rVreme.leaning,
+    rationale: rVreme.rationale,
+    evidence: rVreme.evidence,
+    country: 'RS',
   ),
-  Source(
+  const Source(
     id: 'blic',
     name: 'Blic',
     feedUrl: 'https://www.blic.rs/rss/danasnje-vesti',
+    country: 'RS',
     // Ringier; pronađeni javni izvori ga ne svrstavaju ni na jednu stranu.
   ),
-  Source(
+  const Source(
     id: 'juzne',
     name: 'Južne vesti',
     feedUrl: 'https://www.juznevesti.com/feed/',
+    country: 'RS',
     // Regionalni portal (Niš); javni izvori koje smo čitali ga ne ocenjuju.
   ),
   Source(
     id: 'b92',
-    name: 'B92',
+    name: rB92.name,
     feedUrl: 'https://www.b92.net/info/rss/vesti.xml',
-    leaning: Leaning.mixed,
-    rationale:
-        'Komercijalni zaokret, "less critical"; isti vlasnik kao Prva TV.',
-    evidence: 'https://serbia.mom-gmr.org/en/media/detail/outlet/b92net/',
+    leaning: rB92.leaning,
+    rationale: rB92.rationale,
+    evidence: rB92.evidence,
+    country: 'RS',
   ),
   Source(
     id: 'rts',
-    name: 'RTS',
+    name: rRts.name,
     feedUrl: 'https://www.rts.rs/page/stories/ci/rss.html',
-    leaning: Leaning.proGovernment,
-    rationale: 'Javni servis pod političkom kontrolom (Reuters Institute).',
-    evidence: _reuters,
+    leaning: rRts.leaning,
+    rationale: rRts.rationale,
+    evidence: rRts.evidence,
+    country: 'RS',
   ),
 ];

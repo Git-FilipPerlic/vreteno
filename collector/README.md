@@ -51,3 +51,20 @@ python cluster.py --days 3 --show 15   # group the last 3 days into stories, pri
 Fills the `stories` table and `articles.story_id`. TF-IDF over normalized title and summary,
 cosine similarity against story centroids, 48 h time gap. Stories for the chosen window are
 rebuilt on every run, so story ids change between runs.
+
+## Server for the app
+
+```powershell
+python server.py                 # collects + clusters every 15 min, serves http://0.0.0.0:8080/api/feed
+```
+
+Autostart at Windows logon (scheduled task "Vreteno server", runs `run_server.ps1`, log in `server.log`):
+
+```powershell
+$a = New-ScheduledTaskAction -Execute powershell.exe -Argument '-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "D:\All Work\Vreteno\collector\run_server.ps1"'
+Register-ScheduledTask -TaskName 'Vreteno server' -Action $a -Trigger (New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME) -Force
+Start-ScheduledTask -TaskName 'Vreteno server'     # start now; Stop-ScheduledTask / Unregister-ScheduledTask to undo
+```
+
+The app reaches it at the address in `lib/core/config.dart` (override with
+`--dart-define=API_URL=http://<pc-ip>:8080`). Plain HTTP, home network only.

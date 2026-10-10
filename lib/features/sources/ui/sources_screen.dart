@@ -25,41 +25,58 @@ class SourcesScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
-        children: [
-          Container(
-            padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(
-              color: AppColors.crimsonPale,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: const Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(Icons.info_outline, color: AppColors.crimson),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    'Ocene ne potiču od nas. Preuzete su iz javnih izvora '
-                    '(Reuters Institute, Media Ownership Monitor) i označene su linkom. '
-                    'Gde izvor nije ocenjen, piše "nepoznato".',
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 12),
-          for (final s in repo.sources) ...[
-            _SourceCard(source: s),
-            const SizedBox(height: 10),
-          ],
-          Text(
-            'Boje: ${Leaning.values.map((l) => l.label).join(', ')}',
-            style: theme.textTheme.bodySmall,
-          ),
-        ],
+      body: ListenableBuilder(
+        listenable: repo,
+        builder: (context, _) => _list(theme),
       ),
+    );
+  }
+
+  Widget _list(ThemeData theme) {
+    // Ocenjeni izvori prvi, pa po državi i imenu.
+    final sorted = [...repo.sources]
+      ..sort((a, b) {
+        final r =
+            (a.leaning == Leaning.unknown ? 1 : 0) -
+            (b.leaning == Leaning.unknown ? 1 : 0);
+        if (r != 0) return r;
+        final c = a.country.compareTo(b.country);
+        return c != 0 ? c : a.name.compareTo(b.name);
+      });
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+      children: [
+        Container(
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            color: AppColors.crimsonPale,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: const Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Icons.info_outline, color: AppColors.crimson),
+              SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  'Ocene ne potiču od nas. Preuzete su iz javnih izvora '
+                  '(Reuters Institute, Media Ownership Monitor) i označene su linkom. '
+                  'Gde izvor nije ocenjen, piše "nepoznato".',
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 12),
+        for (final s in sorted) ...[
+          _SourceCard(source: s),
+          const SizedBox(height: 10),
+        ],
+        Text(
+          'Boje: ${Leaning.values.map((l) => l.label).join(', ')}',
+          style: theme.textTheme.bodySmall,
+        ),
+      ],
     );
   }
 }

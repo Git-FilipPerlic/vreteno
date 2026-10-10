@@ -46,3 +46,7 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# collector
+collector/news.db*
+collector/__pycache__/

@@ -1,0 +1,580 @@
+[
+ {
+  "c": "RS",
+  "d": "informer.rs",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "RS",
+  "d": "alo.rs",
+  "ok": true,
+  "feed": "https://www.alo.rs/rss.html",
+  "n": 20,
+  "sample": "Filip Grbić pokopao blokadere: Zašto ću sada, po prvi put, g"
+ },
+ {
+  "c": "RS",
+  "d": "kurir.rs",
+  "ok": true,
+  "feed": "https://www.kurir.rs/rss",
+  "n": 100,
+  "sample": "ĆALETOV SIN SE POHVALIO KOLOIMA OD 150.000 €: Najbahatiji si"
+ },
+ {
+  "c": "RS",
+  "d": "novosti.rs",
+  "ok": true,
+  "feed": "https://www.novosti.rs/rss/vesti",
+  "n": 97,
+  "sample": "VUČIĆ JASNO PORUČIO: Neka 25. oktobra pobeda bude ubedljiva,"
+ },
+ {
+  "c": "RS",
+  "d": "politika.rs",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "RS",
+  "d": "pink.rs",
+  "ok": true,
+  "feed": "https://pink.rs/rss-feed",
+  "n": 50,
+  "sample": "KO KAŽE DA NIJE ISKRENA?! Aneli u snu pokazala gde je srce v"
+ },
+ {
+  "c": "RS",
+  "d": "happytv.rs",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "RS",
+  "d": "b92.net",
+  "ok": true,
+  "feed": "https://www.b92.net/rss/latest",
+  "n": 20,
+  "sample": "Navijači oštetili AEK-ovu dvoranu, Olimpijakos preuzima troš"
+ },
+ {
+  "c": "RS",
+  "d": "telegraf.rs",
+  "ok": true,
+  "feed": "https://www.telegraf.rs/rss",
+  "n": 20,
+  "sample": "Usred Afrike započeo avanturu dugu 700 kilometara: Drugog da"
+ },
+ {
+  "c": "RS",
+  "d": "srbijadanas.com",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "RS",
+  "d": "n1info.rs",
+  "ok": true,
+  "feed": "https://n1info.rs/feed/",
+  "n": 50,
+  "sample": "Srbija centar pozvao celu dijasporu da u znak protesta glasa"
+ },
+ {
+  "c": "RS",
+  "d": "nova.rs",
+  "ok": true,
+  "feed": "https://nova.rs/feed/",
+  "n": 50,
+  "sample": "Đilas: BIA će biti raspuštena na prvoj sednici nove Vlade, m"
+ },
+ {
+  "c": "RS",
+  "d": "danas.rs",
+  "ok": true,
+  "feed": "https://www.danas.rs/feed/",
+  "n": 50,
+  "sample": "Čuva zdravlje srca, sadrži gvožđe i vitamin C: Tri odlična r"
+ },
+ {
+  "c": "RS",
+  "d": "insajder.net",
+  "ok": true,
+  "feed": "https://insajder.net/feed.xml",
+  "n": 100,
+  "sample": "Zaključen Jedinstveni birački spisak za parlamentarne izbore"
+ },
+ {
+  "c": "RS",
+  "d": "nedeljnik.rs",
+  "ok": true,
+  "feed": "https://www.nedeljnik.rs/feed/",
+  "n": 21,
+  "sample": "Đilas: Nova vlada će raspustiti BIA i formirati profesionaln"
+ },
+ {
+  "c": "RS",
+  "d": "vreme.com",
+  "ok": true,
+  "feed": "https://vreme.com/feed/",
+  "n": 12,
+  "sample": "Ruski vojni bloger u Crnoj Gori: Proteran Zvinčuk"
+ },
+ {
+  "c": "RS",
+  "d": "radar.nova.rs",
+  "ok": true,
+  "feed": "https://radar.nova.rs/feed/",
+  "n": 50,
+  "sample": "Projekti na pauzi zbog izbora"
+ },
+ {
+  "c": "RS",
+  "d": "euronews.rs",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "RS",
+  "d": "krik.rs",
+  "ok": true,
+  "feed": "https://www.krik.rs/feed/",
+  "n": 10,
+  "sample": "Nikola Petrović odugovlači suđenje KRIK-u, drugi put tražio "
+ },
+ {
+  "c": "RS",
+  "d": "cenzolovka.rs",
+  "ok": true,
+  "feed": "https://www.cenzolovka.rs/feed/",
+  "n": 20,
+  "sample": "Savet REM-a nije doneo nijednu odluku po prijavama protiv In"
+ },
+ {
+  "c": "RS",
+  "d": "istinomer.rs",
+  "ok": true,
+  "feed": "https://www.istinomer.rs/feed/",
+  "n": 10,
+  "sample": "Snimak ne prikazuje prisilnu vojnu regrutaciju žena u Ukraji"
+ },
+ {
+  "c": "RS",
+  "d": "masina.rs",
+  "ok": true,
+  "feed": "https://www.masina.rs/feed/",
+  "n": 21,
+  "sample": "Dve nedelje do izborne tišine: šta nas očekuje? | Mašina DNE"
+ },
+ {
+  "c": "RS",
+  "d": "rts.rs",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "RS",
+  "d": "rtv.rs",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "RS",
+  "d": "beta.rs",
+  "ok": true,
+  "feed": "https://beta.rs/rss",
+  "n": 10,
+  "sample": "Obeležena 172. godišnjica rođenja Mihajla Pupina u Idvoru"
+ },
+ {
+  "c": "RS",
+  "d": "tanjug.rs",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "RS",
+  "d": "fonet.rs",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "RS",
+  "d": "blic.rs",
+  "ok": true,
+  "feed": "https://www.blic.rs/rss/all",
+  "n": 70,
+  "sample": "U NAREDNIH SAT VREMENA OPREZ! Upravo se oglasio RHMZ zbog op"
+ },
+ {
+  "c": "RS",
+  "d": "mondo.rs",
+  "ok": true,
+  "feed": "https://mondo.rs/rss/629/Naslovna",
+  "n": 100,
+  "sample": "Ovo mesto krije tajnu dugovečnosti ali samo za žene: Žive na"
+ },
+ {
+  "c": "RS",
+  "d": "021.rs",
+  "ok": true,
+  "feed": "https://www.021.rs/rss/all",
+  "n": 10,
+  "sample": "Niški glumac Aleksandar Marinković: Aktivisti SNS pretukli s"
+ },
+ {
+  "c": "RS",
+  "d": "dnevnik.rs",
+  "ok": true,
+  "feed": "https://www.dnevnik.rs/rss.xml",
+  "n": 100,
+  "sample": "Искључења струје за недељу, 11. октобар"
+ },
+ {
+  "c": "RS",
+  "d": "slobodnaevropa.org",
+  "ok": true,
+  "feed": "https://www.slobodnaevropa.org/api/",
+  "n": 20,
+  "sample": "Kako su iranski operativci koristili ChatGPT za objavljivanj"
+ },
+ {
+  "c": "BA",
+  "d": "klix.ba",
+  "ok": true,
+  "feed": "https://www.klix.ba/rss",
+  "n": 30,
+  "sample": "Danas je Svjetski dan mentalnog zdravlja: Više od milijardu "
+ },
+ {
+  "c": "BA",
+  "d": "avaz.ba",
+  "ok": true,
+  "feed": "https://avaz.ba/rss",
+  "n": 10,
+  "sample": "Bolne tajne iz života Bože Vreće: Oca izgubio kao dječak, a "
+ },
+ {
+  "c": "BA",
+  "d": "oslobodjenje.ba",
+  "ok": true,
+  "feed": "https://www.oslobodjenje.ba/rss.xml",
+  "n": 50,
+  "sample": "Valjić i Kaljanac različitog stava o spornim situacijama u W"
+ },
+ {
+  "c": "BA",
+  "d": "faktor.ba",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "BA",
+  "d": "n1info.ba",
+  "ok": true,
+  "feed": "https://n1info.ba/feed/",
+  "n": 50,
+  "sample": "Kao petogodišnjak borio se s tumorom, a danas vodi slavni ti"
+ },
+ {
+  "c": "BA",
+  "d": "balkans.aljazeera.net",
+  "ok": true,
+  "feed": "https://balkans.aljazeera.net/rss.xml",
+  "n": 25,
+  "sample": "Smrt 87-godišnjakinje pokrenula žestoke proteste zbog stambe"
+ },
+ {
+  "c": "BA",
+  "d": "nezavisne.com",
+  "ok": true,
+  "feed": "https://www.nezavisne.com/rss/najnovije",
+  "n": 20,
+  "sample": "Džesika Čestejn u novom hororu od kojeg se ledi krv u žilama"
+ },
+ {
+  "c": "BA",
+  "d": "rtrs.tv",
+  "ok": true,
+  "feed": "https://www.rtrs.tv/vijesti/rss.php",
+  "n": 100,
+  "sample": "Сајић: СНСД апсолутни побједник избора, а на то утицало и св"
+ },
+ {
+  "c": "BA",
+  "d": "capital.ba",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "BA",
+  "d": "srpskainfo.com",
+  "ok": true,
+  "feed": "https://srpskainfo.com/category-feed/sve-vijesti/",
+  "n": 50,
+  "sample": "Ne zaboravite ovaj običaj: Ako su grobovi vaših najmilijih d"
+ },
+ {
+  "c": "BA",
+  "d": "dnevnilist.ba",
+  "ok": false,
+  "why": "site unreachable ConnectionError"
+ },
+ {
+  "c": "BA",
+  "d": "bljesak.info",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "BA",
+  "d": "detektor.ba",
+  "ok": true,
+  "feed": "https://detektor.ba/feed/",
+  "n": 10,
+  "sample": "Smrad s deponije Ramići upozorava na sve veći problem s otpa"
+ },
+ {
+  "c": "BA",
+  "d": "istraga.ba",
+  "ok": true,
+  "feed": "https://istraga.ba/feed/",
+  "n": 10,
+  "sample": "Bodybilder iz Velike Kladuše: Ovo je policajac MUP-a USK koj"
+ },
+ {
+  "c": "BA",
+  "d": "zurnal.info",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "BA",
+  "d": "bhrt.ba",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "BA",
+  "d": "federalna.ba",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "HR",
+  "d": "index.hr",
+  "ok": true,
+  "feed": "https://www.index.hr/rss",
+  "n": 150,
+  "sample": "Dua Lipa ponovno u hot izdanju. Njezinu kombinaciju lako je "
+ },
+ {
+  "c": "HR",
+  "d": "jutarnji.hr",
+  "ok": true,
+  "feed": "https://www.jutarnji.hr/feed",
+  "n": 50,
+  "sample": "Otkriveni nevjerojatni detalji razgovora Putin-Trump; Ukraji"
+ },
+ {
+  "c": "HR",
+  "d": "vecernji.hr",
+  "ok": true,
+  "feed": "https://www.vecernji.hr/feeds/latest",
+  "n": 20,
+  "sample": "Znanstvenici otkrivaju: Ovaj detalj na vašem tijelu upućuje "
+ },
+ {
+  "c": "HR",
+  "d": "24sata.hr",
+  "ok": true,
+  "feed": "https://www.24sata.hr/feeds/najnovije.xml",
+  "n": 20,
+  "sample": "Baretovi fanovi okupit će se u Sopotu: 'Ponesite instrumente"
+ },
+ {
+  "c": "HR",
+  "d": "tportal.hr",
+  "ok": true,
+  "feed": "https://www.tportal.hr/rss-najnovije.xml",
+  "n": 20,
+  "sample": "Zagrebački HNK 2 u znaku gejminga: U tijeku je radionica raz"
+ },
+ {
+  "c": "HR",
+  "d": "net.hr",
+  "ok": true,
+  "feed": "http://net.hr/najnovije/rss.xml",
+  "n": 50,
+  "sample": "Otkrijte zašto prazne role toaletnog papira postaju hit u vr"
+ },
+ {
+  "c": "HR",
+  "d": "slobodnadalmacija.hr",
+  "ok": true,
+  "feed": "https://slobodnadalmacija.hr/feed",
+  "n": 50,
+  "sample": "Veliki obrat: Svi uhićeni u jučerašnjoj akciji USKOK-a pušte"
+ },
+ {
+  "c": "HR",
+  "d": "novilist.hr",
+  "ok": true,
+  "feed": "https://www.novilist.hr/feed/",
+  "n": 10,
+  "sample": "UEFA kaznila HNS s 20.000 eura i zabranom prodaje ulaznica z"
+ },
+ {
+  "c": "HR",
+  "d": "glas-slavonije.hr",
+  "ok": true,
+  "feed": "https://glas-slavonije.hr/rss.xml",
+  "n": 63,
+  "sample": "Radovi u stanu iznad pretvorili im život u agoniju: probijen"
+ },
+ {
+  "c": "HR",
+  "d": "portalnovosti.com",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "HR",
+  "d": "telegram.hr",
+  "ok": true,
+  "feed": "https://www.telegram.hr/feed/",
+  "n": 10,
+  "sample": "HNL uživo (od 15:00): Hajduk i Dinamo na Poljudu igraju derb"
+ },
+ {
+  "c": "HR",
+  "d": "nacional.hr",
+  "ok": true,
+  "feed": "https://www.nacional.hr/feed/",
+  "n": 10,
+  "sample": "NACIONAL.HR pokrenuo je priču koja se zakotrljala. Traži se "
+ },
+ {
+  "c": "HR",
+  "d": "narod.hr",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "HR",
+  "d": "direktno.hr",
+  "ok": true,
+  "feed": "https://direktno.hr/rss.xml",
+  "n": 19,
+  "sample": "Direktno.hr vijesti"
+ },
+ {
+  "c": "HR",
+  "d": "kamenjar.com",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "HR",
+  "d": "hrt.hr",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "HR",
+  "d": "dnevnik.hr",
+  "ok": true,
+  "feed": "https://dnevnik.hr/assets/feed/articles",
+  "n": 10,
+  "sample": "Trump telefonom Putinu čestitao rođendan: \"Ni jedan nije žel"
+ },
+ {
+  "c": "HR",
+  "d": "hina.hr",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "ME",
+  "d": "vijesti.me",
+  "ok": true,
+  "feed": "https://www.vijesti.me/rss",
+  "n": 30,
+  "sample": "Moda je živi svjedok kulture, identiteta, trenutka, socijaln"
+ },
+ {
+  "c": "ME",
+  "d": "cdm.me",
+  "ok": true,
+  "feed": "https://www.cdm.me/feed/",
+  "n": 10,
+  "sample": "Je li mogao Milatović papi ponijeti kacu sira umjesto tenisk"
+ },
+ {
+  "c": "ME",
+  "d": "standard.co.me",
+  "ok": false,
+  "why": "no feed found"
+ },
+ {
+  "c": "ME",
+  "d": "portalanalitika.me",
+  "ok": true,
+  "feed": "https://rss.portalanalitika.me/",
+  "n": 64,
+  "sample": "(VIDEO) Treća epizoda „Vodenog krvotoka Crne Gore“: Ljubica "
+ },
+ {
+  "c": "ME",
+  "d": "pobjeda.me",
+  "ok": true,
+  "feed": "https://rss.pobjeda.me/",
+  "n": 41,
+  "sample": "Crnogorska mreža za ruskog ,,Ribara“"
+ },
+ {
+  "c": "ME",
+  "d": "dan.co.me",
+  "ok": true,
+  "feed": "https://www.dan.co.me/rss.xml",
+  "n": 102,
+  "sample": "Od imovine stečene kriminalom do državne kase: \"Slučaj Radoj"
+ },
+ {
+  "c": "ME",
+  "d": "in4s.net",
+  "ok": true,
+  "feed": "https://www.in4s.net/feed/",
+  "n": 10,
+  "sample": "Абазовић: Хапшење Руса није епско достигнуће, не треба прави"
+ },
+ {
+  "c": "ME",
+  "d": "borba.me",
+  "ok": true,
+  "feed": "https://borba.me/feed/",
+  "n": 10,
+  "sample": "Vučić iznio plan za budućnost Srbije! Ovo su ključne poruke "
+ },
+ {
+  "c": "ME",
+  "d": "rtcg.me",
+  "ok": true,
+  "feed": "https://rtcg.me/rss/",
+  "n": 20,
+  "sample": "Alternativni puls"
+ },
+ {
+  "c": "ME",
+  "d": "rtnk.me",
+  "ok": true,
+  "feed": "https://rtnk.me/feed/",
+  "n": 10,
+  "sample": "Maksim Vojvodić: Gusle vjekovima čuvaju našu istoriju i trad"
+ },
+ {
+  "c": "ME",
+  "d": "mondo.me",
+  "ok": false,
+  "why": "no feed found"
+ }
+]

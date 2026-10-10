@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../data/repositories/article_repository.dart';
+import '../../story/ui/story_screen.dart';
 
 class FeedScreen extends StatefulWidget {
   const FeedScreen({super.key, required this.repo});
@@ -40,6 +41,11 @@ class _FeedScreenState extends State<FeedScreen> {
                     story.sourceIds
                         .map((id) => repo.sourceOf(id).name)
                         .join(', '),
+                  ),
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => StoryScreen(story: story, repo: repo),
+                    ),
                   ),
                   trailing: Text('${story.sourceIds.length}'),
                 );

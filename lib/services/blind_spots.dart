@@ -16,8 +16,8 @@ class BlindSpot {
   final List<Source> covered;
   final List<Source> missing;
 
-  /// Postavljeno kad su svi izvori koji su pokrili priču iste poznate
-  /// orijentacije, a izvori suprotne su je propustili.
+  /// Postavljeno kad priču pokrivaju izvori samo jedne strane (vlada/kritični),
+  /// a neki izvor suprotne strane je propustio.
   final Leaning? oneSided;
 }
 
@@ -79,17 +79,17 @@ List<BlindSpot> findBlindSpots(
     }).toList();
     if (missing.isEmpty) continue;
 
-    final known = covered.map((s) => s.leaning).toSet()
-      ..remove(Leaning.unknown);
+    // Strane su samo proVlada i kritican; mesoviti i nepoznati ne ulaze.
+    final sides = covered
+        .map((s) => s.leaning)
+        .where((l) => l == Leaning.proGovernment || l == Leaning.critical)
+        .toSet();
     Leaning? side;
-    if (known.length == 1 &&
-        covered.every((s) => s.leaning != Leaning.unknown)) {
-      side = known.first;
-      // Jednostrano samo ako je neka druga poznata strana propustila.
-      final otherMissed = missing.any(
-        (s) => s.leaning != Leaning.unknown && s.leaning != side,
-      );
-      if (!otherMissed) side = null;
+    if (sides.length == 1) {
+      final other = sides.first == Leaning.proGovernment
+          ? Leaning.critical
+          : Leaning.proGovernment;
+      if (missing.any((s) => s.leaning == other)) side = sides.first;
     }
     out.add(
       BlindSpot(

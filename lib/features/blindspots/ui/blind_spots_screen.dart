@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../data/repositories/article_repository.dart';
+import '../../story/ui/story_screen.dart';
 import '../../../services/blind_spots.dart';
 
 class BlindSpotsScreen extends StatelessWidget {
@@ -46,7 +47,7 @@ class BlindSpotsScreen extends StatelessWidget {
                 ),
               ),
               const Divider(),
-              for (final s in spots) _SpotTile(spot: s),
+              for (final s in spots) _SpotTile(spot: s, repo: repo),
             ],
           );
         },
@@ -56,9 +57,10 @@ class BlindSpotsScreen extends StatelessWidget {
 }
 
 class _SpotTile extends StatelessWidget {
-  const _SpotTile({required this.spot});
+  const _SpotTile({required this.spot, required this.repo});
 
   final BlindSpot spot;
+  final ArticleRepository repo;
 
   @override
   Widget build(BuildContext context) {
@@ -74,11 +76,15 @@ class _SpotTile extends StatelessWidget {
         'Nisu: ${spot.missing.map((s) => s.name).join(', ')}',
       ),
       isThreeLine: true,
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (_) => StoryScreen(story: spot.story, repo: repo),
+        ),
+      ),
       trailing: side == null
           ? null
           : Tooltip(
-              message:
-                  'Pokrivaju je samo izvori iste orijentacije (${side.name})',
+              message: 'Pokrivaju je samo izvori: ${side.label}',
               child: const Icon(Icons.warning_amber),
             ),
     );

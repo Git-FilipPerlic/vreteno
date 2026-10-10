@@ -16,10 +16,10 @@ Source s(String id, Leaning l) =>
 
 void main() {
   final sources = [
-    s('p1', Leaning.pro),
-    s('p2', Leaning.pro),
-    s('a1', Leaning.anti),
-    s('a2', Leaning.anti),
+    s('p1', Leaning.proGovernment),
+    s('p2', Leaning.proGovernment),
+    s('a1', Leaning.critical),
+    s('a2', Leaning.critical),
     s('x', Leaning.unknown),
   ];
   // Svi izvori imaju članke od sata 0, pa su svi "aktivni".
@@ -37,7 +37,7 @@ void main() {
       minPerDay: 0,
     );
     expect(spots, hasLength(1));
-    expect(spots.first.oneSided, Leaning.pro);
+    expect(spots.first.oneSided, Leaning.proGovernment);
     expect(
       spots.first.missing.map((e) => e.id),
       containsAll(['a1', 'a2', 'x']),

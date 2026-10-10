@@ -50,3 +50,6 @@ app.*.map.json
 # collector
 collector/news.db*
 collector/__pycache__/
+
+# distributable apk
+dist/

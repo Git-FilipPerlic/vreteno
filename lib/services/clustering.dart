@@ -12,7 +12,7 @@ List<Story> clusterArticles(
   double threshold = 0.3,
   Duration maxGap = const Duration(hours: 48),
 }) {
-  if (articles.isEmpty) return const [];
+  if (articles.isEmpty) return [];
 
   final docs = articles.map(_termCounts).toList();
 

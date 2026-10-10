@@ -49,6 +49,12 @@ const defaultSources = <Source>[
     // Ringier; pronađeni javni izvori ga ne svrstavaju ni na jednu stranu.
   ),
   Source(
+    id: 'juzne',
+    name: 'Južne vesti',
+    feedUrl: 'https://www.juznevesti.com/feed/',
+    // Regionalni portal (Niš); javni izvori koje smo čitali ga ne ocenjuju.
+  ),
+  Source(
     id: 'b92',
     name: 'B92',
     feedUrl: 'https://www.b92.net/info/rss/vesti.xml',
